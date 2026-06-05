@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indrojit Sana</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-mono text-2xl font-bold text-primary">
+                    &lt;indro101/&gt;
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#skills" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#cp" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">CP</a>
+                        <a href="#projects" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#contact" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden glass border-t border-gray-200 dark:border-gray-700" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white">Skills</a>
+                <a href="#cp" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white">CP</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <!-- Background Blobs -->
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" style="animation-delay: 2s"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" style="animation-delay: 4s"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Text Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <p class="font-mono text-primary mb-4 text-lg">Hi, my name is</p>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Indrojit.</h1>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-500 dark:text-gray-400 mb-8">
+                        I build <span id="typing-text" class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"></span><span class="animate-pulse">|</span>
+                    </h2>
+                    <p class="mt-4 max-w-2xl mx-auto lg:mx-0 text-xl text-gray-600 dark:text-gray-300 mb-10">Turning complex algorithms into elegant solutions and ideas into scalable web applications through Competitive Programming and Full-Stack Development.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projects" class="px-8 py-3 bg-primary hover:bg-indigo-600 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/30">View My Work</a>
+<a href="Indro_CV.pdf" download="Indro_CV" class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-lg transition-all transform hover:scale-105">
+    Download Resume <i class="fas fa-download ml-2"></i>
+</a>                    </div>
+                    
+                    <div class="mt-12 flex justify-center lg:justify-start space-x-6 text-2xl text-gray-400">
+                        <a href="https://github.com/indro75" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/indro101/" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://codeforces.com/profile/indro101" target="_blank" class="hover:text-primary transition-colors"><i class="fas fa-code"></i></a>
+                        <a href="https://www.codechef.com/users/indro101" target="_blank" class="hover:text-primary transition-colors"><i class="fas fa-laptop-code"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Photo -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative group">
+                        <!-- Gradient Glow Background -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-pink-500 rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                        
+                        <!-- Image Container -->
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-white/20 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                            
+                             <img src="myPic.png" alt="Alex Developer" class="w-full h-full object-cover">
+                         
+                        </div>
+                        
+                        <!-- Floating Badge (Optional cool detail) -->
+                        <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center gap-2 animate-bounce" style="animation-duration: 3s;">
+                            <span class="text-2xl">💻</span>
+                            <div>
+                                <p class="text-xs text-gray-500 font-mono">Status</p>
+                                <p class="text-sm font-bold text-green-500">Open to Work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-primary transition-colors"><i class="fas fa-chevron-down text-2xl"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900/50 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative rounded-2xl overflow-hidden aspect-square bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                        <!-- <i class="fas fa-user-astronaut text-8xl text-gray-400"></i> -->
+                         <img src="myPic3.jpg" alt="Alex Developer" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center">
+                        <span class="text-primary font-mono text-xl mr-2">01.</span> About Me
+                        <span class="ml-4 h-px bg-gray-300 dark:bg-gray-700 flex-grow max-w-xs"></span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-lg leading-relaxed">
+                        Hello! I'm Indro, Computer Science and Engineering student at <span class="text-primary font-semibold">Northern University Of Business & Technology</span>, expected to graduate in 2027. My journey in tech started when I wrote my first "Hello World" in C++ and got hooked on the logic behind it.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                        Today, I balance my time between grinding <span class="font-mono text-secondary">Competitive Programming</span> and building robust, user-centric <span class="font-mono text-secondary">Web Applications</span>. I love optimizing time complexity as much as I love crafting clean UI/UX.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 font-mono text-sm">
+                        <div class="flex items-center gap-2"><i class="fas fa-caret-right text-primary"></i> C++ & Python</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-caret-right text-primary"></i> C & Java</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-caret-right text-primary"></i> React & Next.js</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-caret-right text-primary"></i> PHP & MySQL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
+                <span class="text-primary font-mono text-xl mr-2">02.</span> Technical Arsenal
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-6 rounded-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-terminal"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-mono">C++</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-mono">Python</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-mono">JavaScript</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-mono">PHP</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-mono">Java</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-mono">SQL</span>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-secondary text-3xl mb-4"><i class="fas fa-globe"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-mono">React.js</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-mono">Next.js</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-mono">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-mono">Node.js</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-mono">Express</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-mono">MongoDB</span>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-pink-500 text-3xl mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Tools & CP</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-pink-500/10 text-pink-500 rounded-full text-sm font-mono">Git & GitHub</span>
+                        <span class="px-3 py-1 bg-pink-500/10 text-pink-500 rounded-full text-sm font-mono">Data Structures</span>
+                        <span class="px-3 py-1 bg-pink-500/10 text-pink-500 rounded-full text-sm font-mono">Algorithms</span>
+                        <span class="px-3 py-1 bg-pink-500/10 text-pink-500 rounded-full text-sm font-mono">Linux</span>
+                        <span class="px-3 py-1 bg-pink-500/10 text-pink-500 rounded-full text-sm font-mono">System Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Programming Section -->
+    <section id="cp" class="py-20 bg-white dark:bg-gray-900/50 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
+                <span class="text-primary font-mono text-xl mr-2">03.</span> Competitive Programming
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-xl border-l-4 border-green-500 hover:shadow-lg transition-shadow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl text-green-500"><i class="fas fa-chess-knight"></i></div>
+                        <span class="bg-green-500/20 text-green-600 dark:text-green-400 px-2 py-1 rounded text-xs font-bold font-mono"></span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Codeforces</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">@indro101</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            <div class="text-2xl font-bold text-green-500">1017</div>
+                            <div class="text-xs text-gray-500">Max Rating</div>
+                        </div>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            <div class="text-2xl font-bold">100+</div>
+                            <div class="text-xs text-gray-500">Problems Solved</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-xl border-l-4 border-yellow-500 hover:shadow-lg transition-shadow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl text-yellow-500"><i class="fas fa-utensils"></i></div>
+                        <span class="bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 px-2 py-1 rounded text-xs font-bold font-mono"></span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">CodeChef</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">@indro101</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            <div class="text-2xl font-bold text-yellow-500">1295</div>
+                            <div class="text-xs text-gray-500">Contest Rating</div>
+                        </div>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            <div class="text-2xl font-bold">1200+</div>
+                            <div class="text-xs text-gray-500">Problems Solved</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-xl border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl text-red-500"><i class="fas fa-code"></i></div>
+                        <span class="bg-red-500/20 text-red-600 dark:text-red-400 px-2 py-1 rounded text-xs font-bold font-mono"></span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">LeetCode</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">@indro101</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            <div class="text-2xl font-bold text-red-500">1489</div>
+                            <div class="text-xs text-gray-500">Max Rating</div>
+                        </div>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            <div class="text-2xl font-bold">20+</div>
+                            <div class="text-xs text-gray-500">Problems Solved</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
+                <span class="text-primary font-mono text-xl mr-2">04.</span> Featured Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-chart-line text-6xl text-white/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold">Lost & Found Management</h3>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github text-xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">A Lost and Found Management System is a Python-based application that helps users report and search for lost or found items efficiently.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="text-primary">Python</span><span class="text-gray-400"></span>
+                            <!-- <span class="text-primary">TypeScript</span><span class="text-gray-400">•</span>
+                            <span class="text-primary">Tailwind</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-pink-500 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-shopping-cart text-6xl text-white/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold">Chat APP</h3>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github text-xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">A real-time messaging system built using socket programming that enables multiple users to communicate over a network through a client-server architecture.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="text-primary">C++<span><span class="text-gray-400">•</span>
+                            <span class="text-primary">Socket Programming</span><span class="text-gray-400"></span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-robot text-6xl text-white/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold">AI Study Helper</h3>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github text-xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">AI based app. Help students to summarize & make quizes from the notes they uploaded.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="text-primary">HTML</span><span class="text-gray-400">•</span>
+                            <span class="text-primary">CSS</span><span class="text-gray-400">•</span>
+                            <span class="text-primary">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://github.com/indro75" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all font-mono">
+                    View More on GitHub <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900/50 reveal">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-primary font-mono mb-4">05. What's Next?</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+            <p class="text-gray-600 dark:text-gray-300 text-lg mb-10">
+                I'm currently looking for <span class="text-primary font-semibold">Software Engineering Internships</span>. Whether you have a question, a project idea, or just want to say hi, my inbox is always open!
+            </p>
+            <a href="mailto:indro3311@gmail.com" class="inline-block px-8 py-4 bg-primary hover:bg-indigo-600 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/30 mb-12">
+                Say Hello <i class="fas fa-paper-plane ml-2"></i>
+            </a>
+            <div class="flex justify-center space-x-8 text-2xl text-gray-400">
+                <a href="https://github.com/indro75" target="_blank" class="hover:text-primary transition-colors transform hover:-translate-y-1"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/indro101/" target="_blank" class="hover:text-primary transition-colors transform hover:-translate-y-1"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" class="hover:text-primary transition-colors transform hover:-translate-y-1"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:indro3311@gmail.com" class="hover:text-primary transition-colors transform hover:-translate-y-1"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-sm text-gray-500 dark:text-gray-400 font-mono">
+        <p></p>
+        <p class="mt-2"></p>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
